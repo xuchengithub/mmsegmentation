@@ -1,4 +1,4 @@
-_base_ = ['../_base_/default_runtime.py', '../_base_/datasets/xuchen_dataset.py']
+_base_ = ['../_base_/default_runtime.py', '../_base_/datasets/xuchen.py']
 
 custom_imports = dict(imports='mmdet.models', allow_failed_imports=False)
 num_classes = 150

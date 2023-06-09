@@ -352,6 +352,12 @@ def cocostuff_palette():
             [128, 64, 96], [192, 32, 64], [192, 64, 128], [64, 192, 96],
             [64, 160, 64], [64, 64, 0]]
 
+def xuchen_classes():
+    return ["1","2","3","4","5","6","7","8","9","10","11","12"]
+
+def xuchen_palette():
+    return  [[0, 0, 0], [128, 0, 0], [0, 128, 0], [128, 128, 0], [0, 0, 128], [128, 0, 128],
+                 [0, 128, 128], [128, 128, 128], [64, 0, 0], [192, 0, 0], [64, 128, 0], [192, 128, 0]]
 
 def loveda_palette():
     """LoveDA palette for external use."""
@@ -420,6 +426,7 @@ def lip_palette():
 
 
 dataset_aliases = {
+    'xuchen': ['xuchen'],
     'cityscapes': ['cityscapes'],
     'ade': ['ade', 'ade20k'],
     'voc': ['voc', 'pascal_voc', 'voc12', 'voc12aug'],

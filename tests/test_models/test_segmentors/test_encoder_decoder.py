@@ -87,6 +87,7 @@ def test_postprocess_result():
     assert torch.allclose(outputs[0].seg_logits.data, torch.ones((2, 8, 8)))
 
     data_sample = SegDataSample()
+    
     data_sample.gt_sem_seg = PixelData(
         **{'data': torch.randint(0, 10, (1, 8, 8))})
     data_sample.set_metainfo({
