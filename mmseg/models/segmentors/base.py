@@ -142,7 +142,7 @@ class BaseSegmentor(BaseModel, metaclass=ABCMeta):
             - ``seg_logits``(PixelData): Predicted logits of semantic
                 segmentation before normalization.
         """
-        print(f"data_samples:--------------------------------------------------------{data_samples}")
+
         batch_size, C, H, W = seg_logits.shape
 
         if data_samples is None:
@@ -197,5 +197,4 @@ class BaseSegmentor(BaseModel, metaclass=ABCMeta):
                 'pred_sem_seg':
                 PixelData(**{'data': i_seg_pred})
             })
-        print(f"data_samples last:--------------------------------------------------------{data_samples}")
         return data_samples
