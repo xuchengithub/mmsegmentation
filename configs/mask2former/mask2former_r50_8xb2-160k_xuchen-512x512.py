@@ -245,13 +245,13 @@ param_scheduler = [
         eta_min=0,
         power=0.9,
         begin=0,
-        end=320000,
+        end=20000,
         by_epoch=False)
 ]
 
 # training schedule for 160k
 train_cfg = dict(
-    type='IterBasedTrainLoop', max_iters=320000, val_interval=5000)
+    type='IterBasedTrainLoop', max_iters=20000, val_interval=2000)
 val_cfg = dict(type='ValLoop')
 test_cfg = dict(type='TestLoop')
 default_hooks = dict(
@@ -259,7 +259,7 @@ default_hooks = dict(
     logger=dict(type='LoggerHook', interval=100, log_metric_by_epoch=False),
     param_scheduler=dict(type='ParamSchedulerHook'),
     checkpoint=dict(
-        type='CheckpointHook', by_epoch=False, interval=32000,
+        type='CheckpointHook', by_epoch=False, interval=2000,
         save_best='mIoU'),
     sampler_seed=dict(type='DistSamplerSeedHook'),
     visualization=dict(type='SegVisualizationHook'))
@@ -270,4 +270,5 @@ default_hooks = dict(
 #       or not by default.
 #   - `base_batch_size` = (8 GPUs) x (2 samples per GPU).
 auto_scale_lr = dict(enable=True,base_batch_size=2)
+
 

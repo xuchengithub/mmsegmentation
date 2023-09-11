@@ -9,7 +9,7 @@ import mmcv
 import os
 from mmseg.apis import init_model, inference_model, show_result_pyplot
 # Init the model from the config and the checkpoint
-checkpoint_path = cfg.work_dir +'/best_mIoU_iter_110000.pth'
+checkpoint_path = cfg.work_dir +'/best_mIoU_iter_119000.pth'
 model = init_model(cfg, checkpoint_path, 'cuda:0')
 
 # 推理演示图像
@@ -21,7 +21,7 @@ data_folder_name ="/mmsegmentation/xuchen_folder/powertain_goods_data"
 
 data_address = data_folder_name +"/test_images"
 how_much_file = os.listdir(data_address)
-filtered_list = list(filter(lambda how_much_file: how_much_file.endswith(".png"), how_much_file))
+filtered_list = list(filter(lambda how_much_file: how_much_file.endswith(".jpg"), how_much_file))
 # model.cfg=cfg
 print(f"test_image_address:{data_address}")
 print(f"how_much_file:{len(filtered_list)}")
@@ -39,7 +39,7 @@ import matplotlib.pyplot as plt
 for i in range(len(filtered_list)):
 
     image_nn = data_folder_name + "/test_images/" + filtered_list[i][0:-4]
-    img_path = image_nn + ".png"
+    img_path = image_nn + ".jpg"
     print(f"origin_image_path:{img_path}")
     img = mmcv.imread(img_path)
     resized_img = mmcv.imrescale(img,(512,512))
